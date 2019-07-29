@@ -1,162 +1,59 @@
 import React, { Component } from "react";
+import GenralDetailsTable from "../genralDetailsTable";
+import ContactPersonTable from "../contactPersonTable";
+import ConductTestingTable from "../conductTestingTable";
+import ParentOrgDetailTable from "../parentOrgDetailTable";
+import LegalIdentityDetailsTable from "../legalIdentityDetailsTable";
+import LabLocationDetailsTable from "../labLocationDetailsTable";
+import DisciplineTable from "../disciplineTable";
+import InternalAuditManagementReviewTable from "../internalAuditManagementReviewTable";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 class CommonTabs extends Component {
   state = {};
+  tabsColumn = [
+    "General Details",
+    "Contact Person",
+    "Conduct Testing",
+    "Parent Org Detail",
+    "Legal Identity Details",
+    "Internal Audit Management Review",
+    "Lab Location Details",
+    "Discipline"
+  ];
   render() {
+    const { lab } = this.props;
     return (
       <Tabs>
         <TabList>
-          <Tab>General Details</Tab>
-          <Tab>Contact Person</Tab>
-          <Tab>Conduct Testing</Tab>
-          <Tab>Parent Org Detail</Tab>
-          <Tab>Legal Identity Details</Tab>
-          <Tab>Internal Audit Management Review</Tab>
-          <Tab>Lab Location Details</Tab>
-          <Tab>Discipline</Tab>
+          {this.tabsColumn.map((c, i) => (
+            <Tab key={i}>{c}</Tab>
+          ))}
         </TabList>
 
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <GenralDetailsTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <ContactPersonTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <ConductTestingTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <ParentOrgDetailTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <LegalIdentityDetailsTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <InternalAuditManagementReviewTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-              </tr>
-            </tbody>
-          </table>
+          <LabLocationDetailsTable lab={lab} />
         </TabPanel>
         <TabPanel>
-          <table className="responsive-table">
-            <tbody>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-              <tr>
-                <td>Type_of_cab</td>
-                <td>Public </td>
-              </tr>
-            </tbody>
-          </table>
+          <DisciplineTable lab={lab} />
         </TabPanel>
       </Tabs>
     );

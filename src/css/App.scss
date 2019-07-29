@@ -11,6 +11,30 @@ img {
 }
 $default-bg-color: #26a69a;
 $default-text-color: #fff;
+.card {
+  .card-content {
+    &.lld {
+      padding-bottom: 0 !important;
+      padding-top: 11px !important;
+      &:last-child {
+        padding-bottom: 15px !important;
+      }
+      &:first-child {
+        padding-top: 15px !important;
+      }
+    }
+  }
+}
+
+.card {
+  &.trail {
+    p {
+      word-break: break-all;
+      white-space: normal;
+      margin: 5px 0 0;
+    }
+  }
+}
 .row {
   .col {
     position: relative;
@@ -22,6 +46,7 @@ $default-text-color: #fff;
     }
   }
 }
+
 input {
   margin-bottom: 0 !important;
 }
@@ -36,7 +61,7 @@ input {
 }
 .urlMsg {
   margin-top: 15px;
-  margin: 5px 0 0;
+  margin: 0px 0 0;
   padding: 10px;
   background: $default-bg-color;
   color: $default-text-color;
@@ -59,6 +84,7 @@ body + div {
 }
 .home {
   position: relative;
+  padding-bottom: 50px;
   p {
     padding: 0 40px;
   }
@@ -144,20 +170,39 @@ body + div {
     }
   }
 }
-// .header {
-//   -webkit-transition: 0.5s;
-//   transition: 0.5s;
-// }
-// .stickyHeader {
-//   .header {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     z-index: 9999;
-//     background: #fff;
-//   }
-// }
+
+.header {
+  z-index: 9999;
+  position: relative;
+  background: #fff;
+  transition: all 0.5 ease-in-out;
+  &.active {
+    .urlMsg {
+      padding: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+}
+
+.content {
+  min-height: 120vh;
+}
+.stickyHeader {
+  .header {
+    animation: stickyHeader 1s ease-in-out 1s;
+    position: fixed;
+    width: 100%;
+  }
+}
+@keyframes stickyHeader {
+  from {
+    transform: translate(0, -100px);
+  }
+  to {
+    transform: translate(0, 0px);
+  }
+}
 ._notFound {
   position: absolute;
   top: 50%;
@@ -199,6 +244,25 @@ body + div {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+}
+.input-field {
+  .helper-text {
+    color: red !important;
+  }
+}
+th {
+  &.card {
+    background: #f3f3f3;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background: #fff !important;
+  -webkit-text-fill-color: #433754;
+
+  transition: background-color 5000s ease-in-out 0s;
 }
 @media (max-width: 990px) {
   .input-field.col.l10 {
