@@ -1,1 +1,1 @@
-export { getData, fetchData, errorData } from "../actions/getData";
+export { getData, fetchData } from "../actions/getData";

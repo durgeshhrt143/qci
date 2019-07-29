@@ -17,17 +17,27 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import Details from "./details";
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.api = this.props.api;
+  constructor(props, context) {
+    super(props, context);
+    this.onUnload = this.onUnload.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("beforeunload", this.onUnload);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("beforeunload", this.onUnload);
+  }
+  onUnload() {
+    this.props.history.push("/");
   }
   render() {
-    const { apiData } = this.api;
-    const { data } = this.api.apiData;
-    const { org_trail, lab, discipline } = this.api.apiData.data;
-    if (data === undefined) {
-      this.props.history.push("/");
-    }
+    if (this.props.data === null) return null;
+    const { data } = this.props.data;
+    console.log(data);
+    const { org_trail, lab, discipline } = this.props.data.data;
+
     return (
       <div className="container">
         <div className="row">
@@ -92,8 +102,7 @@ class Dashboard extends Component {
 }
 const mapStateToProp = state => {
   return {
-    api: state.apiDataResponse.apiData,
-    err: state.apiDataResponse.error
+    data: state.apiDataResponse.data
   };
 };
 // const mapDispatchToProps = dispatch => {

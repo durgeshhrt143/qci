@@ -1,18 +1,18 @@
 import * as actionType from "../actions/actionTypes";
 import { updateObject } from "../utility";
 const initialStore = {
-  apiData: {},
-  error: false
+  data: null,
+  loading: false
 };
 const getData = (state = initialStore, action) => {
   switch (action.type) {
     case actionType.GET_DATA:
-      const apiData = {
-        ...action.apiData
+      const newData = {
+        ...action.ulr
       };
-      return updateObject({ ...state }, { apiData: { apiData }, error: false });
-    case actionType.FETCH_DATA_ERROR:
-      return updateObject({ ...state }, { apiData: { apiData }, error: true });
+      return updateObject({ ...state }, { data: newData, loading: false });
+    case actionType.LOADING:
+      return updateObject({ ...state }, { loading: true });
     default:
       return state;
   }

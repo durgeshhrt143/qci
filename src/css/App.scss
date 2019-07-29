@@ -25,7 +25,21 @@ $default-text-color: #fff;
     }
   }
 }
-
+.overflow {
+  position: fixed;
+  z-index: 9999999;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  text-align: center;
+  line-height: 100vh;
+  .loading {
+    width: 100px;
+    height: 100px;
+  }
+}
 .card {
   &.trail {
     p {

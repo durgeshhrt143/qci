@@ -10,23 +10,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "../css/App.scss";
 class App extends Component {
-  state = {
-    apiData: {}
-  };
-  handlePassDataToDashBoard = data => {
-    this.setState({ apiData: data });
-  };
   render() {
     return (
       <React.Fragment>
-        <Header getData={this.handlePassDataToDashBoard} />
+        <Header />
         <ToastContainer />
         <main className="content">
           <Switch>
-            <Route
-              path="/dashboard"
-              render={props => <Dashboard data={this.state.apiData} />}
-            />
+            <Route path="/dashboard" render={props => <Dashboard />} />
             <Route path="/page-no-found" exact component={PageNotFound} />
             <Route path="/" exact component={Home} />
 

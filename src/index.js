@@ -10,6 +10,25 @@ import * as serviceWorker from "./serviceWorker";
 const rootReducer = combineReducers({
   apiDataResponse: getDataReducer
 });
+//redux persistant state
+const saveToLocalStore = state => {
+  try {
+    const serializeState = JSON.stringify(state);
+    localStorage.setItem("state", serializeState);
+  } catch (e) {
+    console.log(e);
+  }
+};
+const loadFromLocalStore = () => {
+  try {
+    const serializeState = localStorage.getItem("state");
+    if (serializeState === null) return undefined;
+    return JSON.parse(serializeState);
+  } catch (e) {
+    console.log(e);
+    return undefined;
+  }
+};
 const logger = store => {
   return next => {
     return action => {
@@ -20,11 +39,16 @@ const logger = store => {
     };
   };
 };
+//redux persistant state
+const persistedState = loadFromLocalStore();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,
+  persistedState,
   composeEnhancers(applyMiddleware(logger, thunk))
 );
+//redux persistant state
+store.subscribe(() => saveToLocalStore(store.getState()));
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

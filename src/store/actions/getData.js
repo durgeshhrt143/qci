@@ -1,23 +1,20 @@
 import * as actionTypes from "./actionTypes";
 import * as Trail from "../../services/dataService";
-export const getData = apiData => {
+export const getData = ulr => {
   return {
     type: actionTypes.GET_DATA,
-    apiData: apiData
+    ulr
   };
 };
-export const errorData = () => {
+export const loading = () => {
   return {
-    type: actionTypes.FETCH_DATA_ERROR
+    type: actionTypes.LOADING
   };
 };
 export const fetchData = ulr => {
   return async dispatch => {
-    try {
-      const { data } = await Trail.getUlrInfo(ulr);
-      dispatch(getData(data));
-    } catch (ex) {
-      dispatch(errorData());
-    }
+    dispatch(loading());
+    const { data } = await Trail.getUlrInfo(ulr);
+    dispatch(getData(data));
   };
 };

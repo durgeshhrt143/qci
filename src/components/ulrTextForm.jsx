@@ -3,6 +3,7 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import { connect } from "react-redux";
 import * as actionCreater from "../store/actions/index";
+import logo from "../images/logo.svg";
 class UlrTextForm extends Form {
   state = {
     data: { ulr: "" },
@@ -14,25 +15,28 @@ class UlrTextForm extends Form {
       .min(18)
       .label("Enter ULR number*")
   };
-
   doSubmit = () => {
-    try {
-      this.props.onGetData(this.state.data.ulr);
-    } catch (ex) {}
-    const { apiData } = this.props.api;
-    if (apiData) {
-      this.props.history.push("/dashboard");
-    } else {
-      alert("Please Enter Correct ULR No.");
-      this.props.history.push("/");
-    }
+    this.props.onGetData(this.state.data.ulr);
+
+    setTimeout(() => {
+      try {
+        if (this.props.api.data.ULR) {
+          this.props.history.push("/dashboard");
+        }
+      } catch (ex) {
+        return null;
+      }
+    }, 500);
   };
   render() {
-    if (this.props.api === undefined) return null;
-    console.log(this.props.api);
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
+          {this.props.loading && (
+            <div className="overflow">
+              <img src={logo} className="loading" alt={logo} />
+            </div>
+          )}
           <div className="row">
             <div className="input-field col l10">
               {this.renderInput("ulr", "Enter ULR number*")}
@@ -46,14 +50,13 @@ class UlrTextForm extends Form {
 }
 const mapStateToProp = state => {
   return {
-    api: state.apiDataResponse.apiData,
-    err: state.apiDataResponse.error
+    api: state.apiDataResponse.data,
+    loading: state.apiDataResponse.loading
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onGetData: data => dispatch(actionCreater.fetchData(data)),
-    onError: () => dispatch(actionCreater.errorData())
+    onGetData: data => dispatch(actionCreater.fetchData(data))
   };
 };
 export default connect(
