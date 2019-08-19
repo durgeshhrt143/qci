@@ -3,11 +3,10 @@ import Header from "./../components/layout/header";
 import Home from "./../components/home";
 import Dashboard from "./../components/dashboard";
 import PageNotFound from "./../components/pageNotFound";
+import ProtectedRoute from "./../components/common/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch, Redirect } from "react-router-dom";
-
 import "react-toastify/dist/ReactToastify.css";
-
 import "../css/App.scss";
 class App extends Component {
   render() {
@@ -17,6 +16,7 @@ class App extends Component {
         <ToastContainer />
         <main className="content">
           <Switch>
+            {/* <ProtectedRoute path={`/dashboard`} component={Dashboard} /> */}
             <Route path="/dashboard" render={props => <Dashboard />} />
             <Route path="/page-no-found" exact component={PageNotFound} />
             <Route path="/" exact component={Home} />

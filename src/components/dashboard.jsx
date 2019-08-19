@@ -15,23 +15,7 @@ import {
 
 import "react-accessible-accordion/dist/fancy-example.css";
 import Details from "./details";
-
 class Dashboard extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.onUnload = this.onUnload.bind(this);
-  }
-
-  componentDidMount() {
-    window.addEventListener("beforeunload", this.onUnload);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("beforeunload", this.onUnload);
-  }
-  onUnload() {
-    this.props.history.push("/");
-  }
   render() {
     if (this.props.data === null) return null;
     const { data } = this.props.data;
@@ -105,10 +89,5 @@ const mapStateToProp = state => {
     data: state.apiDataResponse.data
   };
 };
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onGetData: data => dispatch(actionCreater.fetchData(data)),
-//     onError: () => dispatch(actionCreater.errorData())
-//   };
-// };
+
 export default connect(mapStateToProp)(Dashboard);

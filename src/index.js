@@ -2,13 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import getDataReducer from "./store/reducers/getData";
+import auth from "./store/reducers/auth";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import App from "./containers/App";
 import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 const rootReducer = combineReducers({
-  apiDataResponse: getDataReducer
+  apiDataResponse: getDataReducer,
+  auth
 });
 //redux persistant state
 const saveToLocalStore = state => {

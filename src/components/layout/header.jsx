@@ -9,12 +9,18 @@ class Header extends PureComponent {
   };
   isUrlExists = () => {
     let classes = "header z-depth-4";
-    classes += this.state.urlExits === true ? "" : " active";
+    classes += this.state.urlExits === true ? " active" : "";
     return classes;
   };
+  componentWillReceiveProps(nextProps) {
+    // You don't have to do this check first, but it can help prevent an unneeded render
+    if (nextProps.urlExits !== this.state.urlExits) {
+      this.setState({ urlExits: nextProps.urlExits });
+    }
+  }
   render() {
     const { location, getData } = this.props;
-    if (location.pathname === "/") {
+    if (location.pathname === "/dashboard") {
       this.setState({ urlExits: true });
     }
     return (

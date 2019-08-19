@@ -17,17 +17,22 @@ class UlrTextForm extends Form {
   };
   doSubmit = () => {
     this.props.onGetData(this.state.data.ulr);
-
+    try {
+    } catch (ex) {}
     setTimeout(() => {
       try {
         if (this.props.api.data.ULR) {
+          this.props.onGetUlr(true);
           this.props.history.push("/dashboard");
         }
       } catch (ex) {
-        return null;
+        const errors = { ...this.state.errors };
+        errors.ulr = "Please fill correct ULR number above to proceed.";
+        this.setState({ errors });
       }
     }, 500);
   };
+
   render() {
     return (
       <React.Fragment>
@@ -56,7 +61,8 @@ const mapStateToProp = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onGetData: data => dispatch(actionCreater.fetchData(data))
+    onGetData: data => dispatch(actionCreater.fetchData(data)),
+    onGetUlr: ulr => dispatch(actionCreater.getUlr(ulr))
   };
 };
 export default connect(
