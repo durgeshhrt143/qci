@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b23815d4.chunk.css",
+    "main.js": "/static/js/main.125b83b5.chunk.js",
+    "main.js.map": "/static/js/main.125b83b5.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.182db967.chunk.css": "/static/css/2.182db967.chunk.css",
+    "static/js/2.2f655630.chunk.js": "/static/js/2.2f655630.chunk.js",
+    "static/js/2.2f655630.chunk.js.map": "/static/js/2.2f655630.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3395786cac4fe87293672f2584eca769.js": "/precache-manifest.3395786cac4fe87293672f2584eca769.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.182db967.chunk.css.map": "/static/css/2.182db967.chunk.css.map",
+    "static/css/main.b23815d4.chunk.css.map": "/static/css/main.b23815d4.chunk.css.map",
+    "static/media/404.svg": "/static/media/404.df29add3.svg",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/o.png": "/static/media/o.f8e9b176.png",
+    "static/media/qci-logo.jpg": "/static/media/qci-logo.8849a3cd.jpg",
+    "static/media/verify.gif": "/static/media/verify.42fe219d.gif"
+  }
+}
