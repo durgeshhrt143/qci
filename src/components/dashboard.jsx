@@ -45,7 +45,7 @@ class Dashboard extends Form {
 
     return (
       <Fragment>
-        <section className="info-container">
+        {/* <section className="info-container">
           <div className="container">
             <div className="row">
               <div className="col l6 m6">
@@ -66,8 +66,8 @@ class Dashboard extends Form {
               </div>
             </div>
           </div>
-        </section>
-        <section className="dashboard-container">
+        </section> */}
+        <section className="dashboard-container" style={{ marginTop: "150px" }}>
           <div className="container">
             <div className="row">
               <div className="col l12">
