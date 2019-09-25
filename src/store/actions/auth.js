@@ -9,9 +9,9 @@ import * as actionTypes from "./actionTypes";
 //     type: actionTypes.REMOVE_ULR
 //   };
 // };
-export const getUlr = ulr => {
+export const getAuth = auth => {
   return {
-    type: actionTypes.GET_ULR,
-    ulr
+    type: actionTypes.AUTH,
+    auth
   };
 };

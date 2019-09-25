@@ -3,26 +3,16 @@ import logo from "../../images/qci-logo.jpg";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import UlrTextForm from "../ulrTextForm";
+import verified from "../../images/verify.gif";
 class Header extends PureComponent {
-  state = {
-    urlExits: false
-  };
   isUrlExists = () => {
     let classes = "header z-depth-4";
-    classes += this.state.urlExits === true ? " active" : "";
+    classes += this.props.location.pathname === "/dashboard" ? " active" : "";
     return classes;
   };
-  componentWillReceiveProps(nextProps) {
-    // You don't have to do this check first, but it can help prevent an unneeded render
-    if (nextProps.urlExits !== this.state.urlExits) {
-      this.setState({ urlExits: nextProps.urlExits });
-    }
-  }
   render() {
-    const { location, getData } = this.props;
-    if (location.pathname === "/dashboard") {
-      this.setState({ urlExits: true });
-    }
+    const { getData } = this.props;
+
     return (
       <header className={this.isUrlExists()}>
         <div className="container">
@@ -32,8 +22,12 @@ class Header extends PureComponent {
                 <img src={logo} alt={logo} style={{ width: "280px" }} />
               </Link>
             </div>
-            <div className="col l6">
+            <div className="col l6 right-align">
               <UlrTextForm {...this.props} getData={getData} />
+              <figure className="m-zero">
+                <strong>ULR Verified</strong>
+                <img src={verified} alt="verified" />
+              </figure>
             </div>
           </div>
         </div>

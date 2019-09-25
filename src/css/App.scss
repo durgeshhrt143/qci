@@ -191,6 +191,9 @@ body + div {
   background: #fff;
   transition: all 0.5 ease-in-out;
   &.active {
+    .m-zero {
+      opacity: 1;
+    }
     .urlMsg {
       padding: 0;
       height: 0;
@@ -210,6 +213,7 @@ body + div {
     animation: stickyHeader 1s ease-in-out 1s;
     position: fixed;
     width: 100%;
+    top: 0;
   }
 }
 @keyframes stickyHeader {
@@ -280,6 +284,64 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #433754;
 
   transition: background-color 5000s ease-in-out 0s;
+}
+.info-container {
+  padding-top: 40px;
+}
+.m-zero {
+  width: 250px;
+  opacity: 0;
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: -27px;
+  margin: 0;
+  height: 76px;
+  overflow: hidden;
+  strong {
+    position: absolute;
+    width: 147px;
+    right: 98px;
+    top: 36px;
+    color: #77b43f;
+  }
+  img {
+    max-width: 100%;
+    height: 94px;
+  }
+}
+.l-content {
+  display: inline-block;
+  width: 50%;
+  height: 46px;
+  line-height: 46px;
+  float: left;
+}
+.hits {
+  margin-left: 5px;
+  font-size: 12px;
+  &:before {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background: #77b43f;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+}
+
+.r-content {
+  display: inline-block;
+  width: 50%;
+}
+.apis-container {
+  text-align: right;
+  .input-field {
+    width: 80px;
+    margin: 0;
+    float: right;
+  }
 }
 @media (max-width: 990px) {
   .input-field.col.l10 {

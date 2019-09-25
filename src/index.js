@@ -51,6 +51,7 @@ const store = createStore(
 );
 //redux persistant state
 store.subscribe(() => saveToLocalStore(store.getState()));
+console.log("SUPERMAN", process.env.REACT_APP_NAME);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

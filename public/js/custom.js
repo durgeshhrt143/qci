@@ -7,4 +7,6 @@ $(function() {
       $("body").removeClass("stickyHeader");
     }
   });
+
+  $("select").formSelect();
 });

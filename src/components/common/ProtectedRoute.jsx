@@ -1,37 +1,49 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreater from "../../store/actions/index";
-const ProtectedRoute = ({
-  path,
-  component: Component,
-  render,
-  auth,
-  onGetUlr,
-  ...rest
-}) => {
-  if (typeof auth === "undefined") return null;
-  console.log(auth);
-  return (
-    <Route
-      {...rest}
-      render={props => {
-        if (onGetUlr(true).ulr) return <Redirect to={`/`} />;
-        return Component ? <Component {...props} /> : render(props);
-      }}
-    />
-  );
-};
+class ProtectedRoute extends Component {
+  state = {
+    auth: false
+  };
+  componentDidMount() {
+    this.props.onAuth(false);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    alert("test");
+    if (prevState.auth !== this.state.auth) this.setState({ auth: true });
+  }
+  render() {
+    const {
+      path,
+      component: Component,
+      render,
+      auth,
+      onGetUlr,
+      ...rest
+    } = this.props;
+    console.log(!this.props.auth);
+    return (
+      <Route
+        {...rest}
+        render={props => {
+          if (!this.state.auth) return <Redirect to={`/`} />;
+          return Component ? <Component {...props} /> : render(props);
+        }}
+      />
+    );
+  }
+}
 const mapStateToProp = state => {
   return {
     api: state.apiDataResponse.data,
     loading: state.apiDataResponse.loading,
-    auth: state.auth.authentication
+    auth: state.auth.auth
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onGetUlr: ulr => dispatch(actionCreater.getUlr(ulr))
+    onAuth: auth => dispatch(actionCreater.getAuth(auth))
   };
 };
 export default connect(

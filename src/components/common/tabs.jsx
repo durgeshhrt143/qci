@@ -23,10 +23,11 @@ class CommonTabs extends Component {
   ];
   render() {
     const { lab } = this.props;
+    const tabs = Object.keys(lab);
     return (
       <Tabs>
         <TabList>
-          {this.tabsColumn.map((c, i) => (
+          {tabs.map((c, i) => (
             <Tab key={i}>{c}</Tab>
           ))}
         </TabList>

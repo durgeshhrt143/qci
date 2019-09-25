@@ -3,7 +3,7 @@ import Header from "./../components/layout/header";
 import Home from "./../components/home";
 import Dashboard from "./../components/dashboard";
 import PageNotFound from "./../components/pageNotFound";
-import ProtectedRoute from "./../components/common/ProtectedRoute";
+// import ProtectedRoute from "./../components/common/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header urlExits={false} />
         <ToastContainer />
         <main className="content">
           <Switch>
