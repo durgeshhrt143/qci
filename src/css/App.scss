@@ -289,6 +289,7 @@ input:-webkit-autofill:focus {
   padding-top: 40px;
 }
 .m-zero {
+  z-index: -99;
   width: 250px;
   opacity: 0;
   position: absolute;
@@ -344,8 +345,19 @@ input:-webkit-autofill:focus {
   }
 }
 @media (max-width: 990px) {
+  .m-zero {
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .input-field.col.l10 + button {
+    margin-right: 0.75rem;
+  }
   .input-field.col.l10 {
-    width: 78%;
+    width: 70%;
+  }
+  .dashboard-container {
+    margin-top: 0px !important;
   }
   .urlMsg {
     margin: 20px 0;

@@ -7,6 +7,8 @@ $(function() {
       $("body").removeClass("stickyHeader");
     }
   });
-
-  $("select").formSelect();
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const elems = document.querySelectorAll("select");
+  M.FormSelect.init(elems);
 });
