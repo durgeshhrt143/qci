@@ -269,6 +269,7 @@ body + div {
 .input-field {
   .helper-text {
     color: red !important;
+    text-align: left;
   }
 }
 th {
@@ -344,6 +345,14 @@ input:-webkit-autofill:focus {
     float: right;
   }
 }
+.border {
+  padding: 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  + td {
+    padding-left: 15px;
+  }
+}
+
 @media (max-width: 990px) {
   .m-zero {
     top: -1px;

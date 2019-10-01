@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 class TestDisciplineTable extends Component {
   render() {
-    const { caliberation, testing } = this.props.discipline;
+    const { caliberation, testing, medical, pmp, rmp } = this.props.discipline;
     let objTesting = JSON.parse(
       JSON.stringify(testing).replace(/\s(?=\w+":)/g, "")
     );
+    console.log(caliberation);
     return (
-      <table>
+      <table className="responsive-table">
         <thead>
           <tr>
             <th colSpan="2" className="card">
@@ -16,70 +17,88 @@ class TestDisciplineTable extends Component {
         </thead>
         <tbody className="card">
           <tr>
-            <td>
+            <td className="border">
               <strong>Caliberation</strong>
             </td>
             <td>
-              <div>
-                <strong>THERMAL</strong>
-              </div>
-              <div>
-                {caliberation.THERMAL.map((t, index) => (
-                  <p key={index}>{t}</p>
-                ))}
-              </div>
-              <div>
-                <strong>MECHANICAL</strong>
-              </div>
-              <div>
-                {caliberation.MECHANICAL.map((m, index) => (
-                  <p key={index}>{m}</p>
-                ))}
-              </div>
+              {Object.entries(caliberation).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <strong>{key}</strong>
+                    </div>
+                    <p>{value.toString()} </p>
+                  </div>
+                );
+              })}
             </td>
           </tr>
           <tr>
-            <td>
+            <td className="border">
               <strong>Medical</strong>
             </td>
-            <td />
+            <td>
+              {Object.entries(medical).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <strong>{key}</strong>
+                    </div>
+                    <p>{value.toString()} </p>
+                  </div>
+                );
+              })}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border">
               <strong>Pmp</strong>
             </td>
-            <td />
+            <td>
+              {Object.entries(pmp).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <strong>{key}</strong>
+                    </div>
+                    <p>{value.toString()} </p>
+                  </div>
+                );
+              })}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border">
               <strong>Rmp</strong>
             </td>
-            <td />
+            <td>
+              {Object.entries(rmp).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <strong>{key}</strong>
+                    </div>
+                    <p>{value.toString()} </p>
+                  </div>
+                );
+              })}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border">
               <strong>Testing</strong>
             </td>
             <td>
-              <strong>CHEMICALS</strong>
-              {objTesting.CHEMICALS.map((c, index) => (
-                <p key={index}>{c}</p>
-              ))}
-              <div className="divider" />
-              <strong>FLUID FLOW</strong>
-              {objTesting.FLUIDFLOW.map((f, index) => (
-                <p key={index}>{f}</p>
-              ))}
-              <div className="divider" />
-              <strong>MECHANICAL</strong>
-              {objTesting.MECHANICAL.map((m, index) => (
-                <p key={index}>{m}</p>
-              ))}
-              <div className="divider" />
-              <strong>RADIOLOGICAL</strong>
-              {objTesting.RADIOLOGICAL.map((m, index) => (
-                <p key={index}>{m}</p>
-              ))}
+              {Object.entries(objTesting).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <strong>{key}</strong>
+                    </div>
+                    <p>{value.toString()} </p>
+                  </div>
+                );
+              })}
             </td>
           </tr>
         </tbody>
