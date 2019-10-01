@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from "react";
-import Form from "./common/form";
-import CommonTabs from "./common/tabs";
-import DisciplineTable from "../components/disciplineTable";
-import Trail from "../components/trail";
-import CretificationDetail from "../components/certificateDetail";
-import TestDisciplineTable from "../components/testDisciplineTable";
-import Details from "./details";
+import React, { Fragment } from "react";
+import Form from "../common/form";
+import CommonTabs from "../common/tabs";
+import DisciplineTable from "./partials/disciplineTable";
+import Trail from "./partials/trail";
+import CretificationDetail from "./partials/certificateDetail";
+import TestDisciplineTable from "./partials/testDisciplineTable";
+import Details from "../details";
 import { connect } from "react-redux";
 import Joi from "joi-browser";
 import {

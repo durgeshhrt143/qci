@@ -1,10 +1,10 @@
 import React from "react";
-import o from "../images/o.png";
-import notfound from "../images/404.svg";
+import o from "../../images/o.png";
+import notfound from "../../images/404.svg";
 import { Link } from "react-router-dom";
 const PageNotFound = props => {
   return (
-    <div className="container center-align">
+    <div className="container center-align" style={{ marginTop: "-30px" }}>
       <div className="row">
         <div className="col l12">
           <img src={o} className="_o" alt="o" />

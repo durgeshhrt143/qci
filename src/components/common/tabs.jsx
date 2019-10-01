@@ -5,7 +5,7 @@ import ConductTestingTable from "../conductTestingTable";
 import ParentOrgDetailTable from "../parentOrgDetailTable";
 import LegalIdentityDetailsTable from "../legalIdentityDetailsTable";
 import LabLocationDetailsTable from "../labLocationDetailsTable";
-import DisciplineTable from "../disciplineTable";
+import DisciplineTable from "../dashboard-page/partials/disciplineTable";
 import InternalAuditManagementReviewTable from "../internalAuditManagementReviewTable";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";

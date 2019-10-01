@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Header from "./../components/layout/header";
-import Home from "./../components/home";
-import Dashboard from "./../components/dashboard";
-import PageNotFound from "./../components/pageNotFound";
+import Home from "./../components/landing-page/home";
+import Dashboard from "../components/dashboard-page/dashboard";
+import PageNotFound from "../components/error-page/pageNotFound";
 // import ProtectedRoute from "./../components/common/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch, Redirect } from "react-router-dom";
