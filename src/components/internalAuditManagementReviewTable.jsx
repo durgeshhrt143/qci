@@ -15,10 +15,11 @@ class InternalAuditManagementReviewTable extends Component {
       <table className="responsive-table">
         <tbody>
           {Object.entries(objTesting).map(([key, value]) => {
+            const replaced = key.split("_").join(" ");
             return (
               <tr key={key}>
                 <td>
-                  <strong>{key}</strong>
+                  <strong>{replaced}</strong>
                 </td>
                 <td>{value.toString()} </td>
               </tr>

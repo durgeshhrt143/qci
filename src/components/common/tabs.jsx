@@ -11,25 +11,19 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 class CommonTabs extends Component {
   state = {};
-  tabsColumn = [
-    "General Details",
-    "Contact Person",
-    "Conduct Testing",
-    "Parent Org Detail",
-    "Legal Identity Details",
-    "Internal Audit Management Review",
-    "Lab Location Details",
-    "Discipline"
-  ];
   render() {
     const { lab } = this.props;
+
     const tabs = Object.keys(lab);
+    console.log(tabs);
+
     return (
       <Tabs>
         <TabList>
-          {tabs.map((c, i) => (
-            <Tab key={i}>{c}</Tab>
-          ))}
+          {tabs.map((c, i) => {
+            const replaced = c.split("_").join(" ");
+            return <Tab key={i}>{replaced}</Tab>;
+          })}
         </TabList>
 
         <TabPanel>

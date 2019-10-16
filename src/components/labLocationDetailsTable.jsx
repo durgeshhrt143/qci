@@ -8,15 +8,36 @@ class LabLocationDetailsTable extends Component {
         {lab_location_details.map((lLD, index) => (
           <div className="col l4 m6" key={index}>
             <div className="card">
-              {Object.entries(lLD).map(([key, value]) => {
-                return (
-                  <div className="card-content lld" key={key}>
-                    <strong>{key}</strong>
-                    <div className="divider" />
-                    <p>{value}</p>
-                  </div>
-                );
-              })}
+              <div className="card-content lld">
+                <strong>{`Address :`}</strong>
+                <div className="divider" />
+                <p>{lLD.address}</p>
+              </div>
+              <div className="card-content lld">
+                <strong>{`Pincode No :`}</strong>
+                <div className="divider" />
+                <p>{lLD.pincode}</p>
+              </div>
+              <div className="card-content lld">
+                <strong>{`District :`}</strong>
+                <div className="divider" />
+                <p>{lLD.district}</p>
+              </div>
+              <div className="card-content lld">
+                <strong>{`City :`}</strong>
+                <div className="divider" />
+                <p>{lLD.city}</p>
+              </div>
+              <div className="card-content lld">
+                <strong>{`Fax No :`}</strong>
+                <div className="divider" />
+                <p>{lLD.fax}</p>
+              </div>
+              <div className="card-content lld">
+                <strong>{`Email :`}</strong>
+                <div className="divider" />
+                <p>{lLD.email}</p>
+              </div>
             </div>
           </div>
         ))}

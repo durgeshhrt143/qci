@@ -8,10 +8,11 @@ class ParentOrgDetailTable extends Component {
       <table className="responsive-table">
         <tbody>
           {Object.entries(parent_org_detail).map(([key, value]) => {
+            const replaced = key.split("_").join(" ");
             return (
               <tr key={key}>
                 <td>
-                  <strong>{key}</strong>
+                  <strong>{replaced}</strong>
                 </td>
                 <td>{value.toString()} </td>
               </tr>
