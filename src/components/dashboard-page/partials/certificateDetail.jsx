@@ -26,28 +26,28 @@ class CretificationDetail extends Component {
               <tbody>
                 <tr>
                   <td>
-                    <strong>Created On</strong>
+                    <strong>Created On :</strong>
                     <div>{created_on}</div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>File Hash</strong>
+                    <strong>Unique File Id :</strong>
                     <div>{file_hash}</div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>File Name</strong>
+                    <strong>File Name :</strong>
                     <div>{file_name}</div>
                   </td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>
                     <strong>Issued to Name</strong>
                     <div>{issued_to_name}</div>
                   </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>

@@ -9,7 +9,7 @@ const Home = props => {
             <h3>ULR (Unique Lab Report) format #1</h3>
             <p>
               1<sup>st</sup> 6 digits will be accreditation certificate no.
-              issued by NABL to the CAB (eg. TC2345, CC1234, RC5678 etc.).
+              Issued by NABL to the CAB (e.g. TC2345, CC1234, RC5678 etc.).
             </p>
           </div>
         </div>
@@ -25,8 +25,8 @@ const Home = props => {
             <span>3</span>
             <h3>ULR (Unique Lab Report) format #3</h3>
             <p>
-              Next 1 digit indicate lab no if the CAB is multi location have
-              more than one lab for the accredited scope.
+              Next 1 digit indicate lab no if the CAB is multi location has more
+              than one lab for the accredited scope.
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ const Home = props => {
             <span>4</span>
             <h3>ULR (Unique Lab Report) format #4</h3>
             <p>
-              Next 8 digits (10th till 17th) will be running no. starting from 1
+              Next 8 digits (10th till 17th) will be running No. Starting from 1
               and continuing till year end. The number will restart from 0000001
               every year on 1st of Jan.
             </p>
@@ -46,8 +46,8 @@ const Home = props => {
             <span>5</span>
             <h3>ULR (Unique Lab Report) format #5</h3>
             <p>
-              Last digit (18th) will be indicating scope of the Lab (partial or
-              Full).
+              Last digit (18th) will be indicating the scope of the Lab (partial
+              or full).
             </p>
           </div>
         </div>

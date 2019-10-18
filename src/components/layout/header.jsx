@@ -33,7 +33,7 @@ class Header extends PureComponent {
         </div>
 
         <h6 className="urlMsg center-align">
-          Please fill 18 alphanumeric ULR number above to proceed.
+          Please fill 18 alphanumeric ULR numbers above to proceed.
         </h6>
       </header>
     );

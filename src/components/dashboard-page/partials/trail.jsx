@@ -19,18 +19,18 @@ class Trail extends Component {
                 <p>{orgTrail.email}</p>
               </div>
               <div className="card-action">
-                <strong>{`Address :`}</strong>
+                <strong>{`Unique id :`}</strong>
                 <p>{orgTrail.address}</p>
               </div>
 
-              <div className="card-action">
+              {/* <div className="card-action">
                 <strong>{`State :`}</strong>
                 <p>{orgTrail.state}</p>
-              </div>
-              <div className="card-action">
+              </div> */}
+              {/* <div className="card-action">
                 <strong>{`Country :`}</strong>
                 <p>{orgTrail.country}</p>
-              </div>
+              </div> */}
               <div className="card-action">
                 <strong>{`GST No :`}</strong>
                 <p>{orgTrail.gst_number}</p>
@@ -43,10 +43,10 @@ class Trail extends Component {
                 <strong>{`Pancard No :`}</strong>
                 <p>{orgTrail.pancard}</p>
               </div>
-              <div className="card-action">
+              {/* <div className="card-action">
                 <strong>{`Phone No :`}</strong>
                 <p>{orgTrail.phone_number}</p>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

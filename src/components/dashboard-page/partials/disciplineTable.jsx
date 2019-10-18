@@ -27,7 +27,7 @@ class DisciplineTable extends Component {
         <tbody className="card">
           <tr>
             <td className="border">
-              <strong>Caliberation</strong>
+              <strong>Calibration</strong>
             </td>
             <td>
               {Object.entries(caliberation).map(([key, value]) => {

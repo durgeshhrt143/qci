@@ -13,7 +13,7 @@ class UlrTextForm extends Form {
     ulr: Joi.string()
       .required()
       .min(18)
-      .label("Enter ULR number*")
+      .label("Enter ULR numbers*")
   };
   doSubmit = () => {
     this.props.onGetData(this.state.data.ulr);
@@ -27,7 +27,7 @@ class UlrTextForm extends Form {
         this.props.history.push("/dashboard");
       } catch (ex) {
         const errors = { ...this.state.errors };
-        errors.ulr = "Please fill correct ULR number above to proceed.";
+        errors.ulr = "Please fill the correct ULR numbers above to proceed.";
         this.setState({ errors });
       }
     }, 500);
@@ -44,7 +44,7 @@ class UlrTextForm extends Form {
           )}
           <div className="row">
             <div className="input-field col l10">
-              {this.renderInput("ulr", "Enter ULR number*")}
+              {this.renderInput("ulr", "Enter ULR numbers*")}
             </div>
             {this.renderButton("submit")}
           </div>
